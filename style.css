@@ -198,7 +198,6 @@ h2{
     margin-bottom:15px;
 }
 
-/* FIXED CONTACT LINK COLOR */
 
 #contact a{
     color:#00f5d4;
@@ -262,7 +261,7 @@ footer{
     .hero h2{
         font-size:1rem;
         line-height:1.4;
-        white-space:normal;   /* allow wrapping on mobile */
+        white-space:normal;
     }
 
     .hero-buttons{
@@ -283,8 +282,20 @@ footer{
         padding:60px 8%;
     }
 
+    /* ===== SKILLS GRID 2 PER ROW ===== */
+
     .skills-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr 1fr;
+        gap:15px;
+    }
+
+    .skill-card{
+        aspect-ratio:1/1;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        padding:20px;
     }
 }
 
