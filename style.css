@@ -12,9 +12,9 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    background: linear-gradient(-45deg,#162660,#0f2027,#203a43,#2c5364);
+    background: linear-gradient(-45deg,#0f2027,#1f4037,#0f2027,#2c5364);
     background-size:400% 400%;
-    animation: gradientMove 12s ease infinite;
+    animation: gradientMove 6s ease infinite;
     color:white;
     overflow-x:hidden;
 }
@@ -278,5 +278,58 @@ footer{
         grid-template-columns:repeat(2,1fr);
         gap:15px;
     }
+
+}
+/* ================= LOADER ================= */
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#0f2027;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+transition:opacity 1s ease;
+}
+
+/* SVG */
+
+.loader-svg{
+width:150px;
+height:150px;
+}
+
+/* animated R */
+
+.loader-text{
+font-family:'Poppins',sans-serif;
+font-size:140px;
+font-weight:700;
+fill:none;
+stroke:#00f5d4;
+stroke-width:3;
+
+stroke-dasharray:500;
+stroke-dashoffset:500;
+
+animation: drawR 2s ease forwards;
+animation-iteration-count:2;
+}
+
+/* stroke drawing */
+
+@keyframes drawR{
+
+0%{
+stroke-dashoffset:500;
+}
+
+100%{
+stroke-dashoffset:0;
+}
 
 }

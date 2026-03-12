@@ -13,6 +13,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
+<script>
+
+window.addEventListener("load", function(){
+
+setTimeout(function(){
+
+const loader = document.getElementById("loader");
+
+loader.style.opacity="0";
+
+setTimeout(()=>{
+loader.style.display="none";
+},1000);
+
+},3500);
+
+});
+
+</script>
+
 <body>
 
 <nav>
@@ -155,4 +175,15 @@ linkedin.com/in/rouman-syed-nazeer-590703383
 </footer>
 
 </body>
+<div id="loader">
+
+<svg class="loader-svg" viewBox="0 0 200 200">
+
+<text x="50%" y="55%" text-anchor="middle" class="loader-text">
+R
+</text>
+
+</svg>
+
+</div>
 </html>
