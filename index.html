@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rouman Syed Nazeer | Portfolio</title>
+<title>Rouman Syed Nazeer | Portfolio Website</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -11,13 +11,9 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-
-<!-- PARTICLE CANVAS -->
-<canvas id="particles"></canvas>
 
 <nav>
 <div class="logo">Rouman's Portfolio</div>
@@ -30,7 +26,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 </nav>
 
 <header class="hero">
-
 <h1>Rouman Syed Nazeer</h1>
 <h2>AI Engineer | Data Analyst | Python Developer</h2>
 
@@ -49,21 +44,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 </a>
 
 </div>
-
 </header>
 
 <section id="about">
-
 <h2>About Me</h2>
 
 <p>
-Final-year AI & Data Science student passionate about building intelligent systems and data-driven applications. Experienced in Machine Learning, Deep Learning, TensorFlow, and FastAPI with projects like NeuroScan AI for medical image classification.
+I am a final-year AI & Data Science student passionate about building intelligent systems that solve real-world problems. My interests lie in Artificial Intelligence, Deep Learning, Machine Learning and data-driven analytics, with hands-on experience developing full-stack AI applications using TensorFlow and FastAPI. I have worked on projects ranging from medical image classification (NeuroScan AI) to customer segmentation using RFM analysis.
 </p>
 
 </section>
 
 <section id="skills">
-
 <h2>Tech Stack</h2>
 
 <div class="skills-grid">
@@ -83,14 +75,16 @@ Final-year AI & Data Science student passionate about building intelligent syste
 </section>
 
 <section id="projects">
-
 <h2>Projects</h2>
 
 <div class="project-card">
-
 <h3>NeuroScan AI</h3>
 
-<p>Multi-class ASD severity detection model using CNN on MRI scans with full-stack FastAPI deployment.</p>
+<p>
+Developed a multi-class ASD severity detection model using CNN on MRI scans. Built a full-stack FastAPI web application with real-time prediction capabilities.
+</p>
+
+<p><strong>Tools Used:</strong> Python, TensorFlow, CNN, FastAPI, SQLite, HTML, CSS</p>
 
 <a href="https://github.com/Rouman03/NeuroScan-AI" target="_blank">
 View Repository
@@ -100,11 +94,31 @@ View Repository
 
 <div class="project-card">
 
-<h3>Customer Segmentation (RFM)</h3>
+<h3>Customer Segmentation using RFM</h3>
 
-<p>Customer segmentation using Recency-Frequency-Monetary analysis.</p>
+<p>
+Performed Recency-Frequency-Monetary analysis to segment customers.
+</p>
+
+<p><strong>Tools Used:</strong> Python, Pandas, SQL, Matplotlib</p>
 
 <a href="https://github.com/Rouman03/Customer-Segmentation-RFM" target="_blank">
+View Repository
+</a>
+
+</div>
+
+<div class="project-card">
+
+<h3>Personal Portfolio Website</h3>
+
+<p>
+Designed and developed a fully responsive personal portfolio website to showcase projects, technical skills, and professional profile. Deployed using GitHub Pages.
+</p>
+
+<p><strong>Tools Used:</strong> HTML, CSS, GitHub Pages</p>
+
+<a href="https://github.com/Rouman03/Portfolio-Website" target="_blank">
 View Repository
 </a>
 
@@ -116,108 +130,29 @@ View Repository
 
 <h2>Contact</h2>
 
-<p>Email: 1ep22ad050@eastpoint.ac.in</p>
-<p>Phone: +91 8197860938</p>
-<p>Location: Bengaluru, India</p>
+<p><strong>Email:</strong> 1ep22ad050@eastpoint.ac.in</p>
+<p><strong>Phone:</strong> +91 8197860938</p>
+<p><strong>Location:</strong> Bengaluru, India</p>
+
+<p>
+<strong>GitHub:</strong>
+<a href="https://github.com/Rouman03" target="_blank">
+github.com/Rouman03
+</a>
+</p>
+
+<p>
+<strong>LinkedIn:</strong>
+<a href="https://linkedin.com/in/rouman-syed-nazeer-590703383" target="_blank">
+linkedin.com/in/rouman-syed-nazeer-590703383
+</a>
+</p>
 
 </section>
 
 <footer>
-
 <p>© 2026 Rouman Syed Nazeer</p>
-
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
-
-<script>
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-
-const renderer = new THREE.WebGLRenderer({ alpha:true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.domElement.style.position = "fixed";
-renderer.domElement.style.top = "0";
-renderer.domElement.style.left = "0";
-renderer.domElement.style.zIndex = "-2";
-
-document.body.appendChild(renderer.domElement);
-
-const geometry = new THREE.PlaneGeometry(20,20,50,50);
-
-const material = new THREE.MeshBasicMaterial({
-color:0x162660,
-wireframe:true
-});
-
-const plane = new THREE.Mesh(geometry,material);
-scene.add(plane);
-
-camera.position.z = 5;
-
-function animate(){
-requestAnimationFrame(animate);
-
-plane.rotation.x += 0.001;
-plane.rotation.y += 0.002;
-
-renderer.render(scene,camera);
-}
-
-animate();
-</script>
-
-<!-- PARTICLES -->
-
-<script>
-
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for(let i=0;i<80;i++){
-
-particles.push({
-
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-size:Math.random()*2,
-speedY:Math.random()*0.5+0.2
-
-});
-
-}
-
-function animate(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-particles.forEach(p=>{
-
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-ctx.fillStyle="rgba(255,255,255,0.3)";
-ctx.fill();
-
-p.y-=p.speedY;
-
-if(p.y<0){
-p.y=canvas.height;
-}
-
-});
-
-requestAnimationFrame(animate);
-
-}
-
-animate();
-
-</script>
 
 </body>
 </html>
