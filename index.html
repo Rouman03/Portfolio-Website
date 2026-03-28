@@ -6,184 +6,384 @@
 <title>Rouman Syed Nazeer | Portfolio Website</title>
 
 <link rel="stylesheet" href="style.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <script>
-
 window.addEventListener("load", function(){
-
-setTimeout(function(){
-
-const loader = document.getElementById("loader");
-
-loader.style.opacity="0";
-
-setTimeout(()=>{
-loader.style.display="none";
-},1000);
-
-},3500);
-
+  setTimeout(function(){
+    const loader = document.getElementById("loader");
+    loader.style.opacity = "0";
+    setTimeout(() => { loader.style.display = "none"; }, 1000);
+  }, 3500);
 });
-
 </script>
 
 <body>
 
-<nav>
-<div class="logo">Rouman's Portfolio</div>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<!-- ===== SCROLL PROGRESS BAR ===== -->
+<div id="scroll-progress"></div>
+
+<!-- ===== PARTICLE CANVAS ===== -->
+<canvas id="particles"></canvas>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="logo">Rouman's Portfolio</div>
+  <ul>
+    <li><a href="#about"   class="nav-link">About</a></li>
+    <li><a href="#skills"  class="nav-link">Skills</a></li>
+    <li><a href="#projects"class="nav-link">Projects</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
 </nav>
 
+<!-- ===== HERO ===== -->
 <header class="hero">
-<h1>Rouman Syed Nazeer</h1>
-<h2>AI Engineer | Data Analyst | Python Developer</h2>
-
-<div class="hero-buttons">
-
-<a href="https://github.com/Rouman03" target="_blank">
-<i class="fa-brands fa-github"></i> GitHub
-</a>
-
-<a href="https://linkedin.com/in/rouman-syed-nazeer-590703383" target="_blank">
-<i class="fa-brands fa-linkedin"></i> LinkedIn
-</a>
-
-<a href="./Rouman_Resume(2026).pdf" target="_blank">
-<i class="fa-solid fa-file"></i> View Resume
-</a>
-
-</div>
+  <h1 id="hero-title"></h1>
+  <h2 id="hero-subtitle"></h2>
+  <div class="hero-buttons" id="hero-buttons">
+    <a href="https://github.com/Rouman03" target="_blank">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+    <a href="https://linkedin.com/in/rouman-syed-nazeer-590703383" target="_blank">
+      <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="./Rouman_Resume(2026).pdf" target="_blank">
+      <i class="fa-solid fa-file"></i> View Resume
+    </a>
+  </div>
 </header>
 
-<section id="about">
-<h2>About Me</h2>
+<!-- ===== ABOUT ===== -->
+<section id="about" class="fade-section">
+  <h2>About Me</h2>
+  <p>
+    I am a final-year AI & Data Science student passionate about building intelligent systems that solve real-world problems. My interests lie in Artificial Intelligence, Deep Learning, Machine Learning and data-driven analytics, with hands-on experience developing full-stack AI applications using TensorFlow and FastAPI. I have worked on projects ranging from medical image classification (NeuroScan AI) to customer segmentation using RFM analysis.
+  </p>
 
-<p>
-I am a final-year AI & Data Science student passionate about building intelligent systems that solve real-world problems. My interests lie in Artificial Intelligence, Deep Learning, Machine Learning and data-driven analytics, with hands-on experience developing full-stack AI applications using TensorFlow and FastAPI. I have worked on projects ranging from medical image classification (NeuroScan AI) to customer segmentation using RFM analysis.
-</p>
-
+  <!-- ANIMATED COUNTERS -->
+  <div class="counters">
+    <div class="counter-card">
+      <span class="counter-num" data-target="3">0</span>
+      <span class="counter-label">Projects</span>
+    </div>
+    <div class="counter-card">
+      <span class="counter-num" data-target="4">0</span>
+      <span class="counter-label">Years of Study</span>
+    </div>
+    <div class="counter-card">
+      <span class="counter-num" data-target="1">0</span>
+      <span class="counter-label">Internship</span>
+    </div>
+    <div class="counter-card">
+      <span class="counter-num" data-target="9">0</span>
+      <span class="counter-label">Tech Skills</span>
+    </div>
+  </div>
 </section>
 
-<section id="skills">
-<h2>Tech Stack</h2>
-
-<div class="skills-grid">
-
-<div class="skill-card"><i class="fa-brands fa-python"></i><p>Python</p></div>
-<div class="skill-card"><i class="fa-solid fa-brain"></i><p>TensorFlow</p></div>
-<div class="skill-card"><i class="fa-solid fa-network-wired"></i><p>Deep Learning</p></div>
-<div class="skill-card"><i class="fa-solid fa-server"></i><p>FastAPI</p></div>
-<div class="skill-card"><i class="fa-solid fa-database"></i><p>SQL</p></div>
-<div class="skill-card"><i class="fa-solid fa-chart-line"></i><p>Data Analysis</p></div>
-<div class="skill-card"><i class="fa-brands fa-git-alt"></i><p>Git</p></div>
-<div class="skill-card"><i class="fa-brands fa-html5"></i><p>HTML</p></div>
-<div class="skill-card"><i class="fa-brands fa-css3-alt"></i><p>CSS</p></div>
-
-</div>
-
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="fade-section">
+  <h2>Tech Stack</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><i class="fa-brands fa-python"></i><p>Python</p></div>
+    <div class="skill-card"><i class="fa-solid fa-brain"></i><p>TensorFlow</p></div>
+    <div class="skill-card"><i class="fa-solid fa-network-wired"></i><p>Deep Learning</p></div>
+    <div class="skill-card"><i class="fa-solid fa-server"></i><p>FastAPI</p></div>
+    <div class="skill-card"><i class="fa-solid fa-database"></i><p>SQL</p></div>
+    <div class="skill-card"><i class="fa-solid fa-chart-line"></i><p>Data Analysis</p></div>
+    <div class="skill-card"><i class="fa-brands fa-git-alt"></i><p>Git</p></div>
+    <div class="skill-card"><i class="fa-brands fa-html5"></i><p>HTML</p></div>
+    <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><p>CSS</p></div>
+  </div>
 </section>
 
-<section id="projects">
-<h2>Projects</h2>
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="fade-section">
+  <h2>Projects</h2>
 
-<div class="project-card">
-<h3>NeuroScan AI</h3>
+  <div class="project-card">
+    <h3>NeuroScan AI</h3>
+    <p>Developed a multi-class ASD severity detection model using CNN on MRI scans. Built a full-stack FastAPI web application with real-time prediction capabilities.</p>
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">TensorFlow</span>
+      <span class="tag">CNN</span>
+      <span class="tag">FastAPI</span>
+      <span class="tag">SQLite</span>
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+    </div>
+    <a href="https://github.com/Rouman03/NeuroScan-AI" target="_blank">
+      <i class="fa-brands fa-github"></i> View Repository
+    </a>
+  </div>
 
-<p>
-Developed a multi-class ASD severity detection model using CNN on MRI scans. Built a full-stack FastAPI web application with real-time prediction capabilities.
-</p>
+  <div class="project-card">
+    <h3>Customer Segmentation using RFM</h3>
+    <p>Performed Recency-Frequency-Monetary analysis to segment customers into actionable groups for targeted marketing strategies.</p>
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">Pandas</span>
+      <span class="tag">SQL</span>
+      <span class="tag">Matplotlib</span>
+    </div>
+    <a href="https://github.com/Rouman03/Customer-Segmentation-RFM" target="_blank">
+      <i class="fa-brands fa-github"></i> View Repository
+    </a>
+  </div>
 
-<p><strong>Tools Used:</strong> Python, TensorFlow, CNN, FastAPI, SQLite, HTML, CSS</p>
-
-<a href="https://github.com/Rouman03/NeuroScan-AI" target="_blank">
-View Repository
-</a>
-
-</div>
-
-<div class="project-card">
-
-<h3>Customer Segmentation using RFM</h3>
-
-<p>
-Performed Recency-Frequency-Monetary analysis to segment customers.
-</p>
-
-<p><strong>Tools Used:</strong> Python, Pandas, SQL, Matplotlib</p>
-
-<a href="https://github.com/Rouman03/Customer-Segmentation-RFM" target="_blank">
-View Repository
-</a>
-
-</div>
-
-<div class="project-card">
-
-<h3>Personal Portfolio Website</h3>
-
-<p>
-Designed and developed a fully responsive personal portfolio website to showcase projects, technical skills, and professional profile. Deployed using GitHub Pages.
-</p>
-
-<p><strong>Tools Used:</strong> HTML, CSS, GitHub Pages</p>
-
-<a href="https://github.com/Rouman03/Portfolio-Website" target="_blank">
-View Repository
-</a>
-
-</div>
-
+  <div class="project-card">
+    <h3>Personal Portfolio Website</h3>
+    <p>Designed and developed a fully responsive personal portfolio website to showcase projects, technical skills, and professional profile. Deployed using GitHub Pages.</p>
+    <div class="tags">
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">GitHub Pages</span>
+    </div>
+    <a href="https://github.com/Rouman03/Portfolio-Website" target="_blank">
+      <i class="fa-brands fa-github"></i> View Repository
+    </a>
+  </div>
 </section>
 
-<section id="contact">
-
-<h2>Contact</h2>
-
-<p><strong>Email:</strong> 1ep22ad050@eastpoint.ac.in</p>
-<p><strong>Phone:</strong> +91 8197860938</p>
-<p><strong>Location:</strong> Bengaluru, India</p>
-
-<p>
-<strong>GitHub:</strong>
-<a href="https://github.com/Rouman03" target="_blank">
-github.com/Rouman03
-</a>
-</p>
-
-<p>
-<strong>LinkedIn:</strong>
-<a href="https://linkedin.com/in/rouman-syed-nazeer-590703383" target="_blank">
-linkedin.com/in/rouman-syed-nazeer-590703383
-</a>
-</p>
-
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="fade-section">
+  <h2>Contact</h2>
+  <p><strong>Email:</strong> 1ep22ad050@eastpoint.ac.in</p>
+  <p><strong>Phone:</strong> +91 8197860938</p>
+  <p><strong>Location:</strong> Bengaluru, India</p>
+  <p><strong>GitHub:</strong>
+    <a href="https://github.com/Rouman03" target="_blank">github.com/Rouman03</a>
+  </p>
+  <p><strong>LinkedIn:</strong>
+    <a href="https://linkedin.com/in/rouman-syed-nazeer-590703383" target="_blank">linkedin.com/in/rouman-syed-nazeer-590703383</a>
+  </p>
 </section>
 
+<!-- ===== FOOTER ===== -->
 <footer>
-<p>© 2026 Rouman Syed Nazeer</p>
+  <p>© 2026 Rouman Syed Nazeer</p>
 </footer>
 
-</body>
+<!-- ===== BACK TO TOP ===== -->
+<button id="back-to-top" title="Back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- ===== LOADER ===== -->
 <div id="loader">
-
-<svg class="loader-svg" viewBox="0 0 200 200">
-
-<text x="50%" y="55%" text-anchor="middle" class="loader-text">
-R
-</text>
-
-</svg>
-
+  <svg class="loader-svg" viewBox="0 0 200 200">
+    <text x="50%" y="55%" text-anchor="middle" class="loader-text">R</text>
+  </svg>
 </div>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+
+/* =========================================
+   PARTICLE BACKGROUND
+   ========================================= */
+const canvas = document.getElementById('particles');
+const ctx    = canvas.getContext('2d');
+
+function resize() {
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+const stars = Array.from({ length: 120 }, () => ({
+  x:           Math.random() * canvas.width,
+  y:           Math.random() * canvas.height,
+  r:           Math.random() * 1.5 + 0.3,
+  alpha:       Math.random(),
+  speed:       Math.random() * 0.35 + 0.08,
+  tSpeed:      Math.random() * 0.018 + 0.004,
+  tDir:        Math.random() > 0.5 ? 1 : -1
+}));
+
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  stars.forEach(s => {
+    s.alpha += s.tSpeed * s.tDir;
+    if (s.alpha >= 1 || s.alpha <= 0.08) s.tDir *= -1;
+    s.y -= s.speed;
+    if (s.y < 0) { s.y = canvas.height; s.x = Math.random() * canvas.width; }
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, 45, 111, ${s.alpha * 0.65})`;
+    ctx.fill();
+  });
+  requestAnimationFrame(drawParticles);
+}
+drawParticles();
+
+/* =========================================
+   SEQUENTIAL TYPING EFFECT
+   ========================================= */
+const nameText     = "Rouman Syed Nazeer";
+const subtitleText = "AI Engineer | Data Analyst | Python Developer";
+const nameEl       = document.getElementById('hero-title');
+const subtitleEl   = document.getElementById('hero-subtitle');
+const buttonsEl    = document.getElementById('hero-buttons');
+
+function typeText(el, text, speed, onDone) {
+  let i = 0;
+  el.classList.add('typing-active');
+  function tick() {
+    if (i < text.length) {
+      el.textContent += text[i++];
+      setTimeout(tick, speed);
+    } else {
+      el.classList.remove('typing-active');
+      el.classList.add('typing-done');
+      if (onDone) onDone();
+    }
+  }
+  tick();
+}
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    typeText(nameEl, nameText, 80, () => {
+      setTimeout(() => {
+        subtitleEl.style.visibility = 'visible';
+        typeText(subtitleEl, subtitleText, 45, () => {
+          setTimeout(() => { buttonsEl.classList.add('visible'); }, 300);
+        });
+      }, 400);
+    });
+  }, 4600);
+});
+
+/* =========================================
+   SCROLL PROGRESS BAR
+   ========================================= */
+const progressBar = document.getElementById('scroll-progress');
+
+window.addEventListener('scroll', () => {
+  const scrollTop  = window.scrollY;
+  const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+  const pct        = (scrollTop / docHeight) * 100;
+  progressBar.style.width = pct + '%';
+
+  /* ---- BACK TO TOP visibility ---- */
+  const btn = document.getElementById('back-to-top');
+  if (scrollTop > 400) {
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
+  }
+
+  /* ---- ACTIVE NAV HIGHLIGHT ---- */
+  const sections = document.querySelectorAll('section[id]');
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 140) {
+      current = sec.getAttribute('id');
+    }
+  });
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+/* =========================================
+   BACK TO TOP BUTTON
+   ========================================= */
+document.getElementById('back-to-top').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* =========================================
+   SCROLL FADE-IN (sections)
+   ========================================= */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-section').forEach(s => observer.observe(s));
+
+/* =========================================
+   SKILL CARDS STAGGER
+   ========================================= */
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.skill-card').forEach((card, i) => {
+        setTimeout(() => card.classList.add('visible'), i * 80);
+      });
+      skillObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+const skillsSection = document.getElementById('skills');
+if (skillsSection) skillObserver.observe(skillsSection);
+
+/* =========================================
+   PROJECT CARDS STAGGER
+   ========================================= */
+const projectObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.project-card').forEach((card, i) => {
+        setTimeout(() => card.classList.add('visible'), i * 130);
+      });
+      projectObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+const projectsSection = document.getElementById('projects');
+if (projectsSection) projectObserver.observe(projectsSection);
+
+/* =========================================
+   ANIMATED COUNTERS
+   ========================================= */
+function animateCounter(el, target, duration) {
+  let start = 0;
+  const step = target / (duration / 16);
+  function update() {
+    start += step;
+    if (start < target) {
+      el.textContent = Math.floor(start) + '+';
+      requestAnimationFrame(update);
+    } else {
+      el.textContent = target + '+';
+    }
+  }
+  update();
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.counter-num').forEach(el => {
+        animateCounter(el, parseInt(el.dataset.target), 1200);
+      });
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+
+const aboutSection = document.getElementById('about');
+if (aboutSection) counterObserver.observe(aboutSection);
+
+</script>
+
+</body>
 </html>
